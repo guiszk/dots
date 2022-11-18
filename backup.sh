@@ -10,7 +10,7 @@ fi
 
 [[ ! -d $FOLDER ]] && mkdir $FOLDER
 
-rsync -P -a -v {.bashrc,.vimrc,.setscreen.sh,backup.sh} $FOLDER
+rsync -P -a -v {.bashrc,.zshrc,.vimrc,.setscreen.sh,backup.sh} $FOLDER
 rsync -P -a -v -r {.vim,.config} $FOLDER
 rm -rf $FOLDER/.config/{spotify,libreoffice,dconf}
 crontab -l > $FOLDER/crontab.txt
