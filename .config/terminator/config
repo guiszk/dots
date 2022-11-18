@@ -1,0 +1,22 @@
+[global_config]
+  dbus = False
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.7
+    background_type = transparent
+    background_image = /home/guiszk/at.png
+    font = Source Code Pro 18
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
