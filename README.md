@@ -2,7 +2,7 @@
 Personal configuration files.
 
 ## Files
-Includes configs for `i3`, `polybar`, `rofi`, `bashrc`, `vimrc`, `crontab` and others.
+Includes configs for `i3`, `polybar`, `rofi`, `zshrc`, `vimrc`, `crontab` and others.
 
 Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 
@@ -11,3 +11,6 @@ Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 `setscreen.sh`: scales screen and sets up wallpaper.
 
 Polybar modules tested on Arch Linux.
+
+## Polybar
+![polybar](./bar.png)
