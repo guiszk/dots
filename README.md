@@ -10,6 +10,8 @@ Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 
 `setscreen.sh`: scales screen and sets up wallpaper.
 
+`.dmenu_run`: run dmenu with pywal colors.
+
 Polybar modules tested on Arch Linux.
 
 ## Polybar
