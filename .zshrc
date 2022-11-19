@@ -23,7 +23,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-PS1="%(?..%B%{$fg[red]%}[%?] %{$reset_color%})%{$fg[magenta]%}%Bmbp %{$fg[blue]%}%~ %{$reset_color%}%% "
+PS1="%(?..%B%{$fg[red]%}[%?] %{$reset_color%})%{$fg[magenta]%}%B%{$fg[blue]%}%~ %{$reset_color%}%% "
 
 # User configuration
 

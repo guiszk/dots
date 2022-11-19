@@ -1,4 +1,4 @@
-# Dots
+# dots
 Personal configuration files.
 
 ## Files

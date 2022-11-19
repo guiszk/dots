@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/guiszk/.config/polybar'
+let g:netrw_dirhist_7='/home/guiszk/.config/rofi/launchers/type-1'
 let g:netrw_dirhist_6='/home/guiszk/.config/polybar'
 let g:netrw_dirhist_5='/home/guiszk/.config/rofi/launchers/type-1'
 let g:netrw_dirhist_4='/home/guiszk/.config/rofi/launchers/type-1/shared'
