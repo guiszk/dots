@@ -12,7 +12,7 @@ fi
 
 rsync -P -a -v {.bashrc,.zshrc,.vimrc,.setscreen.sh,backup.sh} $FOLDER
 rsync -P -a -v -r {.vim,.config} $FOLDER
-rm -rf $FOLDER/.config/{spotify,libreoffice,dconf}
+rm -rf $FOLDER/.config/{spotify,libreoffice,dconf,gtk-3.0}
 crontab -l > $FOLDER/crontab.txt
 
 Value1=$(cat ~/dots/.datelog.txt)
