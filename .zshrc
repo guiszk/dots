@@ -1,6 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-#ZSH_THEME="kardan"
+ZSH_THEME=frontcube
+#ZSH_THEME=random
+#ZSH_THEME_RANDOM_CANDIDATES=("frontcube" "alanpeabody" "arrow")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
