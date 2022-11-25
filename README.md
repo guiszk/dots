@@ -2,11 +2,11 @@
 Personal configuration files.
 
 ## Files
-Includes configs for `i3`, `polybar`, `rofi`, `zshrc`, `vimrc`, `crontab` and others.
+Includes configs for `i3`, `polybar`, `zshrc`, `vimrc`, `crontab` and others.
 
 Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 
-`backup.sh`: backs everything up to ~/dots.
+`backup.sh`: backs everything up to `~/dots`.
 
 `setscreen.sh`: scales screen and sets up wallpaper.
 
@@ -15,4 +15,7 @@ Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 Polybar modules tested on Arch Linux.
 
 ## Polybar
-![polybar](./bar.png)
+![polybar](./images/bar.png)
+
+## zsh
+![zsh](./images/zsh.png)
