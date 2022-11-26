@@ -19,10 +19,10 @@ gaps outer 1
 #gaps outer all plus 5
 #border_radius 5
 exec xcompmgr -c -f -n
-exec --no-startup-id xrandr -s 2560x1600
-exec feh --bg-max --randomize $HOME/.wallpaper/*
+#exec --no-startup-id xrandr -s 2560x1600
+#exec feh --bg-max --randomize $HOME/.wallpaper/*
 exec sudo dhcpcd
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec ~/.setscreen.sh
 
 set $mod Mod1

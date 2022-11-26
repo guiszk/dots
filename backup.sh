@@ -11,8 +11,8 @@ fi
 [[ ! -d $FOLDER ]] && mkdir $FOLDER
 
 rsync -P -a -v {.bashrc,.zshrc,.vimrc,.setscreen.sh,backup.sh,.dmenu_run} $FOLDER
-rsync -P -a -v -r {.vim,.config} $FOLDER
-rm -rf $FOLDER/.config/{spotify,libreoffice,dconf,gtk-3.0}
+rsync -P -a -v .vim/ $FOLDER/.vim/
+rsync -P -a -v .config/{i3,polybar,wal,terminator,yay} $FOLDER/.config/
 crontab -l > $FOLDER/crontab.txt
 
 Value1=$(cat ~/dots/.datelog.txt)
