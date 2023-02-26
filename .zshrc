@@ -1,8 +1,8 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME=frontcube
-#ZSH_THEME=random
-#ZSH_THEME_RANDOM_CANDIDATES=("frontcube" "alanpeabody" "arrow")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +57,10 @@ alias bgswap='feh --bg-max --randomize ~/.wallpaper/*'
 alias lowercase="tr '[:upper:]' '[:lower:]'"
 alias ytdl='youtube-dl --no-check-certificate -o "%(title)s.%(ext)s"'
 alias zshedit='vim ~/.zshrc'
+alias vimedit='vim ~/.vimrc'
 alias chmodcorrectdirs='find ./* -type d -prune -exec chmod u=rwx,g=rx,o=rx {} \;'
+alias spotifyadblock='bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Mac/main/install.sh)'
+alias debian_run='docker run -it -v $PWD:/home/shared --name debian-container debian /bin/bash'
 
 # functions
 getsha1 () {
@@ -112,4 +115,63 @@ getwalcolors () {
 
 styleswap () {
 	wal -i ~/.wallpaper/
+}
+
+szk () {
+    if [ $# -ne 1 ]; then
+        echo "szk <text/file>"
+        return 1
+    fi
+    if [ -f $1  ]; then
+        cat $1 | curl --data-binary @- https://szk.onrender.com
+    else
+        echo $1 | curl --data-binary @- https://szk.onrender.com
+    fi
+}
+
+mvall () {
+    if [ $# -ne 1 ]; then
+        echo "mvall <folder name>"
+    	return 1
+	fi
+	if [ -d $1 ]; then
+		echo "Folder" $1 "already exists."
+		return 1
+	fi
+	mkdir $1
+	for i in $(ls -1 | egrep -v $1); do
+		mv "${i}" $1
+	done
+}
+
+findfind () {
+    if [ $# -lt 2 ]; then
+        echo "findfind <folder> <extension> <*exclude>"
+    	return 1
+	fi
+	if [ -z "$3" ]; then
+		find "$1" -type f -name "*.$2"
+	else
+		find "$1" -type f -name "*.$2" ! -name "*$3*"
+	fi
+}
+
+#PATH
+export PATH="$PATH:/Users/guiszk/Library/Python/3.9/bin"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+function preexec() {
+  timer=$(($(gdate +%s%0N)/1000000))
+}
+
+function precmd() {
+  if [ $timer ]; then
+    now=$(($(gdate +%s%0N)/1000000))
+    elapsed=$(($now-$timer))
+
+    export RPROMPT="%F{green}${elapsed}ms %{$reset_color%}"
+    unset timer
+  fi
 }
