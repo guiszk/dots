@@ -171,7 +171,21 @@ function precmd() {
     now=$(($(gdate +%s%0N)/1000000))
     elapsed=$(($now-$timer))
 
-    export RPROMPT="%F{green}${elapsed}ms %{$reset_color%}"
+	if ((elapsed < 1000)); then
+	  export RPROMPT="%F{green}${elapsed}ms %{$reset_color%}"
+	elif ((elapsed < 60000)); then
+	  seconds=$((elapsed / 1000))
+	  export RPROMPT="%F{green}${seconds}s %{$reset_color%}"
+	elif ((elapsed < 3600000)); then
+	  minutes=$((elapsed / 60000))
+	  seconds=$((elapsed % 60000 / 1000))
+	  export RPROMPT="%F{green}${minutes}m ${seconds}s %{$reset_color%}"
+	else
+	  hours=$((elapsed / 3600000))
+	  minutes=$((elapsed % 3600000 / 60000))
+	  seconds=$((elapsed % 60000 / 1000))
+	  export RPROMPT="%F{green}${hours}h ${minutes}m ${seconds}s %{$reset_color%}"
+	fi
     unset timer
   fi
 }
