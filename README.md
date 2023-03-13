@@ -19,6 +19,3 @@ bar
 <img src="./img/bar.png" />
 tinybar
 <img src="./img/bar1.png" height="20" />
-
-## zsh 
-<img src="./img/zsh.png" height="20" />

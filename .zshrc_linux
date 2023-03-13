@@ -1,0 +1,29 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="minimal"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+function preexec() {
+  cmd_start="$SECONDS"
+}
+
+function precmd() {
+  local cmd_end="$SECONDS"
+  elapsed=$((cmd_end-cmd_start))
+
+  if ((elapsed > 0 && elapsed < 60)); then
+    export RPROMPT="${elapsed}s"
+elif ((elapsed < 3600)); then
+    mins=$((elapsed / 60))
+    secs=$((elapsed % 60))
+    export RPROMPT="${mins}m${secs}s"
+else
+    hours=$((elapsed / 3600))
+    mins=$((elapsed % 3600 / 60))
+    secs=$((elapsed % 60))
+    export RPROMPT="${hours}h${mins}m${secs}s"
+fi
+}
