@@ -15,7 +15,10 @@ Fonts go in `~/.fonts`, wallpapers in `~/.wallpaper`.
 Polybar modules tested on Arch Linux.
 
 ## Polybar
-<img src="./images/bar.png" />
+bar
+<img src="./img/bar.png" />
+tinybar
+<img src="./img/bar1.png" height="20" />
 
 ## zsh 
-<img src="./images/zsh.png" height="20" />
+<img src="./img/zsh.png" height="20" />
